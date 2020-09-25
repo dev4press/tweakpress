@@ -14,33 +14,37 @@ License:           GNU GeneralPublic License v3 or later
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-if (!defined('WPMU_GOOGLE_ANALYTICS_TRACKING_CODE')) {
+if ( ! defined( 'WPMU_GOOGLE_ANALYTICS_TRACKING_CODE' ) ) {
 	define( 'WPMU_GOOGLE_ANALYTICS_TRACKING_CODE', 'UA-XXXXX-Y' );
 }
 
 if ( ! is_admin() ) {
 	add_action( 'wp_head', 'dev4press__google_analytics', 1 );
 	function dev4press__google_analytics() {
-	    if ( ! is_super_admin() ) {
-            $_items = array(
-                "ga('create', '".WPMU_GOOGLE_ANALYTICS_TRACKING_CODE."', 'auto');",
-                "ga('set', 'anonymizeIp', true);",
-	            "ga('set', 'forceSSL', true);",
-                "ga('require', 'displayfeatures');",
-                "ga('require', 'linkid');",
-                "ga('send', 'pageview');"
-            );
+		if ( ! is_super_admin() ) {
+			$_items = array(
+				"ga('create', '" . WPMU_GOOGLE_ANALYTICS_TRACKING_CODE . "', 'auto');",
+				"ga('set', 'anonymizeIp', true);",
+				"ga('set', 'forceSSL', true);",
+				"ga('require', 'displayfeatures');",
+				"ga('require', 'linkid');",
+				"ga('send', 'pageview');"
+			);
 
-            ?>
+			?>
 
 <script id="google-analytics-loader" type="text/javascript">
-window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-<?php echo join(PHP_EOL, $_items); ?>
+window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+};
+ga.l = +new Date;
+
+<?php echo join( PHP_EOL, $_items ); ?>
 
 </script>
 <script id="google-analytics-script" src="https://www.google-analytics.com/analytics.js" async></script>
 
-            <?php
-	    }
+			<?php
+		}
 	}
 }
