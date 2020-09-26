@@ -4,4 +4,4 @@ This is a collection of small WordPress `must use` plugins that are simple to co
 
 If needed, scripts will be updated for newer WordPress version. Right now, they are tested with latest WordPress 5.5.
 
-To learn more about this collection, about WordPress must use plugins and about individual plugins in this collection, check out the GitHub Wiki pages.
+To learn more about this collection, about WordPress must use plugins and about individual plugins in this collection, check out the [Wiki Pages](https://github.com/dev4press/wpmu-plugins/wiki).
