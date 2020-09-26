@@ -21,15 +21,20 @@ if ( ! defined( 'WPMU_GOOGLE_ANALYTICS_TRACKING_CODE' ) ) {
 if ( ! is_admin() ) {
 	add_action( 'wp_head', 'dev4press__google_analytics', 1 );
 	function dev4press__google_analytics() {
-		if ( ! is_super_admin() ) {
+		$_show = apply_filters( 'dev4press-wpmu-google-analytics-show', ! is_super_admin() );
+		$_code = apply_filters( 'dev4press-wpmu-google-analytics-tracking-code', WPMU_GOOGLE_ANALYTICS_TRACKING_CODE );
+
+		if ( $_show ) {
 			$_items = array(
-				"ga('create', '" . WPMU_GOOGLE_ANALYTICS_TRACKING_CODE . "', 'auto');",
+				"ga('create', '" . $_code . "', 'auto');",
 				"ga('set', 'anonymizeIp', true);",
 				"ga('set', 'forceSSL', true);",
 				"ga('require', 'displayfeatures');",
 				"ga('require', 'linkid');",
 				"ga('send', 'pageview');"
 			);
+
+			$_items = apply_filters( 'dev4press-wpmu-google-analytics-tracking-items', $_items );
 
 			?>
 
