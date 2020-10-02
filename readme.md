@@ -1,4 +1,5 @@
-# Dev4Press WPMU Plugins Collection
+# TeakPress
+## Dev4Press WPMU Plugins Collection
 
 This is a collection of small WordPress `must use` plugins that are simple to configure and install through the WordPress `mu-plugins` system. The list of plugins is expected to grow over time, and more usefult snippets will be included.
 
