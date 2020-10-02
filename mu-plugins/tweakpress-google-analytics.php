@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name:       Dev4Press WPMU Snippets: Google Analytics
-Plugin URI:        https://github.com/dev4press/wpmu-plugins
+Plugin Name:       TweakPress: Google Analytics
+Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       Add Google Analytics tracking code into page HEAD without the use of plugins or Google Tag Manager.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
@@ -19,8 +19,8 @@ if ( ! defined( 'WPMU_GOOGLE_ANALYTICS_TRACKING_CODE' ) ) {
 }
 
 if ( ! is_admin() ) {
-	add_action( 'wp_head', 'dev4press__google_analytics', 1 );
-	function dev4press__google_analytics() {
+	add_action( 'wp_head', 'tweakpress__google_analytics', 1 );
+	function tweakpress__google_analytics() {
 		$_show = apply_filters( 'dev4press-wpmu-google-analytics-show', ! is_super_admin() );
 		$_code = apply_filters( 'dev4press-wpmu-google-analytics-tracking-code', WPMU_GOOGLE_ANALYTICS_TRACKING_CODE );
 

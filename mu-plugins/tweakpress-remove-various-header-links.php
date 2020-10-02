@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name:       Dev4Press WPMU Snippets: Remove Various Header Links
-Plugin URI:        https://github.com/dev4press/wpmu-plugins
+Plugin Name:       TweakPress: Remove Various Header Links
+Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       WordPress adds many links into page HEAD (RSS, Adjacent Posts, RSD, WLManifest...). If you don't need or want many of these links, you can use this plugin to disable them.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
@@ -15,10 +15,10 @@ License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 if ( ! is_admin() ) {
-	add_action( 'plugins_loaded', 'dev4press__remove_header_links' );
+	add_action( 'plugins_loaded', 'tweakpress__remove_header_links' );
 }
 
-function dev4press__remove_header_links() {
+function tweakpress__remove_header_links() {
 	/* Remove auto generated shortlink */
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 	remove_action( 'template_redirect', 'wp_shortlink_header', 11 );

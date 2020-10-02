@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name:       Dev4Press WPMU Snippets: Remove WordPress Emoji Support
-Plugin URI:        https://github.com/dev4press/wpmu-plugins
+Plugin Name:       TweakPress: Remove WordPress Emoji Support
+Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       All modern browsers support emojis. And for old and outdated browsers, WordPress includes support for Emoji's that is added in the page header including JavaScript, loads additional files from WordPress.org.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
@@ -15,10 +15,10 @@ License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 if ( ! is_admin() ) {
-	add_action( 'plugins_loaded', 'dev4press__remove_wp_emoji_support' );
+	add_action( 'plugins_loaded', 'tweakpress__remove_wp_emoji_support' );
 }
 
-function dev4press__remove_wp_emoji_support() {
+function tweakpress__remove_wp_emoji_support() {
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -29,10 +29,10 @@ function dev4press__remove_wp_emoji_support() {
 
 	add_filter( 'emoji_svg_url', '__return_false', 100 );
 
-	add_filter( 'tiny_mce_plugins', 'dev4press__remove_wp_emoji_support__disable_tinymce_plugin' );
+	add_filter( 'tiny_mce_plugins', 'tweakpress__remove_wp_emoji_support__disable_tinymce_plugin' );
 }
 
-function dev4press__remove_wp_emoji_support__disable_tinymce_plugin( $plugins ) {
+function tweakpress__remove_wp_emoji_support__disable_tinymce_plugin( $plugins ) {
 	if ( is_array( $plugins ) ) {
 		return array_diff( $plugins, array( 'wpemoji' ) );
 	}

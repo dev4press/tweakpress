@@ -1,8 +1,8 @@
 <?php
 
 /*
-Plugin Name:       Dev4Press WPMU Snippets: Elementor Eicons Optimization
-Plugin URI:        https://github.com/dev4press/wpmu-plugins
+Plugin Name:       TweakPress: Elementor Eicons Optimization
+Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       Embed Elementor EICONS font into page head, and add font-display:auto to font registration, eliminating render-blocking problem for this font.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
@@ -14,15 +14,15 @@ License:           GNU GeneralPublic License v3 or later
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 */
 
-add_action( 'elementor/frontend/after_register_styles', 'dev4press__elementor_dequeue_eicons_css');
+add_action( 'elementor/frontend/after_register_styles', 'tweakpress__elementor_dequeue_eicons_css');
 
-function dev4press__elementor_dequeue_eicons_css() {
+function tweakpress__elementor_dequeue_eicons_css() {
 	wp_dequeue_style( 'elementor-icons' );
 }
 
-add_action( 'wp_head', 'dev4press__elementor_embed_eicons' );
+add_action( 'wp_head', 'tweakpress__elementor_embed_eicons' );
 
-function dev4press__elementor_embed_eicons() {
+function tweakpress__elementor_embed_eicons() {
 	if ( defined( 'ELEMENTOR_PATH' ) && defined( 'ELEMENTOR_URL' ) ) {
 		$path = ELEMENTOR_PATH . 'assets/lib/eicons/css/elementor-icons.min.css';
 
