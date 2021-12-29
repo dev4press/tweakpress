@@ -6,9 +6,9 @@ Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       WordPress adds many links into page HEAD (RSS, Adjacent Posts, RSD, WLManifest...). If you don't need or want many of these links, you can use this plugin to disable them.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
-Version:           1.0
+Version:           1.1
 Requires at least: 4.9
-Tested up to:      5.5
+Tested up to:      5.9
 Requires PHP:      5.6
 License:           GNU GeneralPublic License v3 or later
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html

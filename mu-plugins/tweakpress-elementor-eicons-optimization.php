@@ -6,9 +6,9 @@ Plugin URI:        https://github.com/dev4press/tweakpress
 Description:       Embed Elementor EICONS font into page head, and add font-display:auto to font registration, eliminating render-blocking problem for this font.
 Author:            Milan Petrovic - Dev4Press
 Author URI:        https://www.dev4press.com/
-Version:           1.0
+Version:           1.1
 Requires at least: 4.9
-Tested up to:      5.5
+Tested up to:      5.9
 Requires PHP:      5.6
 License:           GNU GeneralPublic License v3 or later
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
