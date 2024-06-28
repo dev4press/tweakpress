@@ -1,20 +1,20 @@
 <?php
 
-/*
-Plugin Name:       TweakPress: Elementor Eicons Optimization
-Plugin URI:        https://github.com/dev4press/tweakpress
-Description:       Embed Elementor EICONS font into page head, and add font-display:auto to font registration, eliminating render-blocking problem for this font.
-Author:            Milan Petrovic - Dev4Press
-Author URI:        https://www.dev4press.com/
-Version:           1.1
-Requires at least: 4.9
-Tested up to:      5.9
-Requires PHP:      5.6
-License:           GNU GeneralPublic License v3 or later
-License URI:       http://www.gnu.org/licenses/gpl-3.0.html
-*/
+/**
+ * Plugin Name:       TweakPress: Elementor Eicons Optimization
+ * Plugin URI:        https://github.com/dev4press/tweakpress
+ * Description:       Embed Elementor EICONS font into page head, and add font-display:auto to font registration, eliminating render-blocking problem for this font.
+ * Author:            Milan Petrovic - Dev4Press
+ * Author URI:        https://www.dev4press.com/
+ * Version:           1.2
+ * Requires at least: 5.0
+ * Tested up to:      6.6
+ * Requires PHP:      7.4
+ * License:           GNU GeneralPublic License v3 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
+ */
 
-add_action( 'elementor/frontend/after_register_styles', 'tweakpress__elementor_dequeue_eicons_css');
+add_action( 'elementor/frontend/after_register_styles', 'tweakpress__elementor_dequeue_eicons_css' );
 
 function tweakpress__elementor_dequeue_eicons_css() {
 	wp_dequeue_style( 'elementor-icons' );

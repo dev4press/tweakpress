@@ -1,18 +1,18 @@
 <?php
 
-/*
-Plugin Name:       TweakPress: Embed jQuery Migrate
-Plugin URI:        https://github.com/dev4press/tweakpress
-Description:       Embed jQuery Migrate inside the page HEAD for better cache performance. Works with the WordPress 4.9 or newer.
-Author:            Milan Petrovic - Dev4Press
-Author URI:        https://www.dev4press.com/
-Version:           1.0
-Requires at least: 4.9
-Tested up to:      6.0
-Requires PHP:      5.6
-License:           GNU GeneralPublic License v3 or later
-License URI:       http://www.gnu.org/licenses/gpl-3.0.html
-*/
+/**
+ * Plugin Name:       TweakPress: Embed jQuery Migrate
+ * Plugin URI:        https://github.com/dev4press/tweakpress
+ * Description:       Embed jQuery Migrate inside the page HEAD for better cache performance.
+ * Author:            Milan Petrovic - Dev4Press
+ * Author URI:        https://www.dev4press.com/
+ * Version:           1.1
+ * Requires at least: 5.0
+ * Tested up to:      6.6
+ * Requires PHP:      7.4
+ * License:           GNU GeneralPublic License v3 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
+ */
 
 if ( ! is_admin() ) {
 	add_action( 'wp_head', 'tweakpress__embed_jquery_migrate', 1 );

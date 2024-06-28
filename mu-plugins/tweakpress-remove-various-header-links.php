@@ -1,18 +1,18 @@
 <?php
 
-/*
-Plugin Name:       TweakPress: Remove Various Header Links
-Plugin URI:        https://github.com/dev4press/tweakpress
-Description:       WordPress adds many links into page HEAD (RSS, Adjacent Posts, RSD, WLManifest...). If you don't need or want many of these links, you can use this plugin to disable them.
-Author:            Milan Petrovic - Dev4Press
-Author URI:        https://www.dev4press.com/
-Version:           1.1
-Requires at least: 4.9
-Tested up to:      5.9
-Requires PHP:      5.6
-License:           GNU GeneralPublic License v3 or later
-License URI:       http://www.gnu.org/licenses/gpl-3.0.html
-*/
+/**
+ * Plugin Name:       TweakPress: Remove Various Header Links
+ * Plugin URI:        https://github.com/dev4press/tweakpress
+ * Description:       WordPress adds many links into page HEAD (RSS, RSD, WLManifest...). If you don't need or want many of these links, you can use this plugin to disable them.
+ * Author:            Milan Petrovic - Dev4Press
+ * Author URI:        https://www.dev4press.com/
+ * Version:           1.2
+ * Requires at least: 5.0
+ * Tested up to:      6.6
+ * Requires PHP:      7.4
+ * License:           GNU GeneralPublic License v3 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
+ */
 
 if ( ! is_admin() ) {
 	add_action( 'plugins_loaded', 'tweakpress__remove_header_links' );
